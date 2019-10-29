@@ -1,0 +1,19 @@
+package de.uniwue.jpp.mineswueper;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+public class MainTest {
+    public static void main(String[] args) throws Exception {
+//        Level beginner = new Level(5, 5, 2);
+//        System.out.print(beginner);
+        Field a = new Field(new Coordinate(1,2));
+        Field b = new Field(new Coordinate(2,1));
+        Collection<Coordinate> coords = new ArrayList<>();
+        coords.add(a.getCoordinate());
+        coords.add(b.getCoordinate());
+        Board theone = new Board(3, 3, coords);
+
+
+    }
+}

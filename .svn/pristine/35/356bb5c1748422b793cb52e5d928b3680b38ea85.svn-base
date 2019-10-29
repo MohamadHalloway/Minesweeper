@@ -1,0 +1,20 @@
+package de.uniwue.jpp.mineswueper;
+
+import java.util.Collection;
+import java.util.List;
+
+public class RevealFieldsResult {
+    private enum RevealFieldState{FIELD_NOT_REVEALED, FIELDS_REVEALED, FOUND_MINE};
+
+    //Wenn das Klick nix macht
+    public RevealFieldsResult(){
+
+    }
+
+    public RevealFieldsResult(Collection<Field> fields){
+
+        }
+
+
+}
+

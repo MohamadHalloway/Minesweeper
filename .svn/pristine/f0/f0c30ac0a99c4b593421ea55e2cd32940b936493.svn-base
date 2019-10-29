@@ -1,0 +1,150 @@
+package de.uniwue.jpp.mineswueper;
+
+import javax.swing.text.html.HTMLDocument;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
+import static de.uniwue.jpp.mineswueper.RevealFieldsResult.RevealFieldState.FIELD_NOT_REVEALED;
+
+public class Board {
+
+    List<Field> fields;
+
+    /*-----------------------------------------------------------------------------------------------------*/
+
+    public Board(int width, int height, Collection<Coordinate> mines){
+
+    }
+
+    /*-----------------------------------------------------------------------------------------------------*/
+    public boolean hasWon(){ //should be ready to work!
+        for(Field f : fields){
+            if(f.isOpened() && f.hasMine()) return false;
+        }
+        return true;
+    }
+
+    /*-----------------------------------------------------------------------------------------------------*/
+    //set or remove the flag on the Field
+    public void flagField(Coordinate coord) {
+        //searching the right field
+        Field gesucht = null;
+        for (Field f : fields) {
+            if (f.getCoordinate().equals(coord)) {
+                gesucht = f;
+                break;
+            }
+        }
+        if(!gesucht.isOpened()){  //the filed must be not opened so that we set a flag
+            //testing the flag status
+            if (gesucht.hasFlag()){gesucht.setHasFlag(false);}
+            else{gesucht.setHasFlag(true);}
+
+        }
+    }
+    /*-----------------------------------------------------------------------------------------------------*/
+    //number of the Mine-Fields, which doesn't have flags on it
+    public int getRemainingMines(){
+        int AnzahlMines = 0;
+        for (Field f : fields) {
+            if (f.hasMine() && !f.hasFlag()){AnzahlMines++;}
+        }
+        return AnzahlMines;
+    }
+    /*-----------------------------------------------------------------------------------------------------*/
+    //get all fields who has mines
+    public Collection<Field> getMines(){
+        Collection<Field> result = new Collection<Field>() {
+            @Override
+            public int size() {
+                return 0;
+            }
+
+            @Override
+            public boolean isEmpty() {
+                return false;
+            }
+
+            @Override
+            public boolean contains(Object o) {
+                return false;
+            }
+
+            @Override
+            public Iterator<Field> iterator() {
+                return null;
+            }
+
+            @Override
+            public Object[] toArray() {
+                return new Object[0];
+            }
+
+            @Override
+            public <T> T[] toArray(T[] a) {
+                return null;
+            }
+
+            @Override
+            public boolean add(Field field) {
+                return false;
+            }
+
+            @Override
+            public boolean remove(Object o) {
+                return false;
+            }
+
+            @Override
+            public boolean containsAll(Collection<?> c) {
+                return false;
+            }
+
+            @Override
+            public boolean addAll(Collection<? extends Field> c) {
+                return false;
+            }
+
+            @Override
+            public boolean removeAll(Collection<?> c) {
+                return false;
+            }
+
+            @Override
+            public boolean retainAll(Collection<?> c) {
+                return false;
+            }
+
+            @Override
+            public void clear() {
+
+            }
+        };
+        for (Field f :fields){
+            if (f.hasMine()) result.add(f);
+        }
+        return result;
+    }
+    /*-----------------------------------------------------------------------------------------------------*/
+    //to return all the Fileds without being able to change the collection
+    public Collection<Field> getFields(){
+        Collection<Field> result =  Collections.unmodifiableCollection(fields);
+        return result;
+    }
+    /*-----------------------------------------------------------------------------------------------------*/
+    public RevealFieldsResult.RevealFieldState revealFields(Coordinate coord){
+        //searching the right field
+        Field gesucht = null;
+        for (Field f : fields) {
+            if (f.getCoordinate().equals(coord)) {
+                gesucht = f;
+                break;
+            }
+        }
+        //Field has a Flag or opened =>
+        if (gesucht.hasFlag() || gesucht.isOpened()){return RevealFieldsResult.RevealFieldState.FIELD_NOT_REVEALED;}
+        else{return RevealFieldsResult.RevealFieldState.FIELD_NOT_REVEALED;}
+    }
+}

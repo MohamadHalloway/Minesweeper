@@ -1,0 +1,286 @@
+package de.uniwue.jpp.mineswueper;
+
+import javax.swing.text.html.HTMLDocument;
+import java.text.CollationElementIterator;
+import java.util.*;
+
+import static de.uniwue.jpp.mineswueper.RevealFieldsResult.RevealFieldState.FIELD_NOT_REVEALED;
+
+public class Board {
+
+    public List<List<Field>> theBoard;
+    List<List<Field>> preBoard;
+    public int width;
+    public int heigh;
+    /*-----------------------------------------------------------------------------------------------------*/
+
+    public Board(int width, int height, Collection<Coordinate> mines) {
+        this.width = width; this.heigh = height;
+        //checking if x or y are negativ numbers
+        if (width < 0 || height < 0) {
+            throw new IllegalArgumentException();
+        }
+        //Creating the two dimensional List
+        List<List<Field>> preBoard = new ArrayList<>();
+        for (int i = 0; i < height; i++) {
+            preBoard.add(new ArrayList<>());
+            for (int j = 0; j < width; j++) {
+                preBoard.get(i).add(new Field(new Coordinate(j, i)));
+            }
+        }
+        this.preBoard = preBoard;
+        //putting the mines where they should be
+        for (Coordinate c : mines) {
+            findField(preBoard, c).setHasMine(true);
+        }
+        this.preBoard = preBoard;
+        this.theBoard = preBoard;
+        //Givving every feld his neighbors
+        for (List<Field> L : preBoard) {
+            for (Field f : L) {
+                f.setNachbern(AlleNachbern(f));
+            }
+        }
+        this.preBoard = preBoard;
+        //setting the new minesNachbarn for each field
+        for (List<Field> L : preBoard) {
+            for (Field f : L) {
+                f.setNeighbourMineCount(countMinesNachbern(f));
+            }
+        }
+        this.preBoard = preBoard;
+        this.theBoard = preBoard;
+    }
+
+    /*-----------------------------------------------------------------------------------------------------*/
+    public boolean hasWon() { //should be ready to work!
+        for (List<Field> list : theBoard) {
+            for (Field f : list) {
+                if (f.isOpened() && f.hasMine()) return false;
+                if (!f.isOpened() && !f.hasMine()) return false;
+            }
+        }
+        return true;
+    }
+
+    /*-----------------------------------------------------------------------------------------------------*/
+    //set or remove the flag on the Field
+    public void flagField(Coordinate coord) {
+        //searching the right field
+        Field gesucht = findField(theBoard, coord);
+
+        if (!gesucht.isOpened()) {  //the filed must be not opened so that we set a flag
+            //testing the flag status
+            if (gesucht.hasFlag()) {
+                gesucht.setHasFlag(false);
+            } else {
+                gesucht.setHasFlag(true);
+            }
+
+        }
+    }
+
+    /*-----------------------------------------------------------------------------------------------------*/
+    //number of the Mine-Fields, which doesn't have flags on it
+    public int getRemainingMines() {
+        int AnzahlMines = 0;
+        for (List<Field> List : theBoard) {
+            for (Field f : List) {
+                if (f.hasMine()) AnzahlMines++;
+            }
+            for (Field f : List) {
+                if (f.hasFlag()) AnzahlMines--;
+            }
+        }
+        return AnzahlMines;
+    }
+
+    /*-----------------------------------------------------------------------------------------------------*/
+    //get all fields who has mines
+    public Collection<Field> getMines() {
+        Collection<Field> result = new HashSet<>();
+        for (List<Field> first : theBoard) {
+            for (Field f : first) {
+                if (f.hasMine()) {
+                    result.add(f);
+                }
+            }
+        }
+
+        return result;
+    }
+
+    /*-----------------------------------------------------------------------------------------------------*/
+    //to return all the Fileds without being able to change the collection
+    public Collection<Field> getFields() {
+        Collection<Field> preBoard = new HashSet<>();
+        for (List<Field> first : theBoard) {
+            for (Field f : first) {
+                preBoard.add(f);
+            }
+        }
+        Collection<Field> finalBoard = Collections.unmodifiableCollection(preBoard);
+
+        return finalBoard;
+    }
+
+    /*-----------------------------------------------------------------------------------------------------*/
+    public RevealFieldsResult revealFields(Coordinate coord) {
+        //searching the right field
+        Field gesucht = findField(theBoard, coord);
+
+
+        if (gesucht.hasFlag() || gesucht.isOpened()) {         //Field has a Flag or opened =>
+            return new RevealFieldsResult();
+        } else if (!gesucht.isOpened()) {                      //Feld als aufgedeckt markieren
+            gesucht.setOpened(true);
+        }
+        if (gesucht.hasMine()) {                               //Feld ist eine Mine
+            Collection<Field> result = new HashSet<>();
+            result.add(gesucht);
+            return new RevealFieldsResult(result);
+        } else {                                               //Feld ist keine Mine
+            if (gesucht.getNeighbourMineCount() != 0) {        //nachbarn sind vermint
+                Collection<Field> result = new HashSet<>();
+                result.add(gesucht);
+                return new RevealFieldsResult(result);
+            } else {                                           //nachbarn sind nicht vermint
+                Collection<Field> aufgedeckten = new HashSet<>();
+                aufgedeckten = rekursivAufdecken(gesucht);
+                aufgedeckten.add(gesucht);
+
+                return new RevealFieldsResult(aufgedeckten);
+            }
+        }
+    }
+
+    /*-----------------------------------------------------------------------------------------------------*/
+    public RevealFieldsResult revealMultiClickFields(Coordinate coord) {
+
+        Field gesucht = findField(theBoard, coord);
+
+        if (!gesucht.isOpened()) {      //das Feld noch nicht geöffnet
+            return new RevealFieldsResult();
+        }
+        if (gesucht.isOpened() && gesucht.getNeighbourMineCount() == 0) { //geöffnet und grenzt an keine Mine
+            return new RevealFieldsResult();
+        } else {                    //geöffnet und grenzt an mind. eine Mine
+            //Anzahl der Flaggen berechnen
+            int flaggen = 0;
+            for (Field f : gesucht.getNachbern()) {
+                if (f.hasFlag()) flaggen++;
+            }
+            //now we complete
+            if (flaggen != gesucht.getNeighbourMineCount()) {   //falggen != mineCount
+                return new RevealFieldsResult();
+            } else {                                            //flaggen = minecount
+                Collection<Field> result = new HashSet<>();
+//                gesucht.setOpened(true);
+//                result.add(gesucht);
+                for (Field f : gesucht.getNachbern()) {
+                    if (!f.isOpened() && !f.hasFlag()) {
+//                        result = combine(result, rekursivAufdecken(f));
+                          result.add(f);
+                    }
+                }
+                for(Field f : result){
+                    System.out.println(f.getCoordinate());
+                }
+//                for (List<Field> list : theBoard) {
+//                    for (Field f : list) {
+//                        if (!f.isOpened() && !f.hasFlag()) {
+//                                if (f.hasMine()) {           //mind. einer hat mine
+//                                    Collection<Field> neu = new ArrayList<Field>();
+//                                    neu.add(gesucht);
+//                                    return new RevealFieldsResult(neu);
+//                                } else {
+//                            result.add(f);
+////                                }
+//                        }
+//            }
+//        }
+                return new RevealFieldsResult(result);
+            }
+
+
+        }
+    }
+
+    /*-----------------------------------------------------------------------------------------------------*/
+    public Field findField(List<List<Field>> first, Coordinate c) {
+        for (List<Field> second : first) {
+            for (Field f : second) {
+                if (f.getCoordinate().equals(c)) return f;
+            }
+        }
+        return null;
+    }
+
+    /*-----------------------------------------------------------------------------------------------------*/
+//get all neighbors of a feld
+    public Collection<Field> AlleNachbern(Field f) {
+        Collection<Field> result = new HashSet<>();
+        Coordinate xy = f.getCoordinate();
+        for (int i = xy.getY() - 1; i < xy.getY() + 2; i++) {
+            if (i >= 0 && i < heigh) {
+                for (int j = xy.getX() - 1; j < xy.getX() + 2; j++) {
+                    if (j >= 0 && j < width) {
+                        result.add(findField(preBoard, new Coordinate(j, i)));
+                    }
+                }
+            }
+        }
+        //removing the field, which we searched his neighbors from the result
+        result.remove(findField(theBoard, xy));
+        return result;
+    }
+
+    /*-----------------------------------------------------------------------------------------------------*/
+//calculate how many minesNachbern
+    public int countMinesNachbern(Field field) {
+        int count = 0;
+        Collection<Field> neighbors = field.getNachbern();
+        for (Field f : neighbors) {
+            if (f.hasMine()) count++;
+        }
+        return count;
+    }
+
+
+    /*-----------------------------------------------------------------------------------------------------*/
+    public Collection<Field> rekursivAufdecken(Field field) {
+        Collection<Field> result = new HashSet<>();
+        //Aufdecken aller noch nicht geöffneten Nachbarn
+        for (Field f : field.getNachbern()) {
+//            Coordinate x = f.getCoordinate();
+            if (!f.isOpened() && !f.hasFlag()) {
+                f.setOpened(true);
+                result.add(f);
+            }
+        }
+        // Die Nachbarn rekursiv überprüfen
+        for (Field f : result) {
+//            Coordinate y = f.getCoordinate();
+            if (f.getNeighbourMineCount() == 0) {
+                result = combine(result, rekursivAufdecken(f));
+            }
+        }
+//        result.add(field);
+
+        return result;
+    }
+
+    /*-----------------------------------------------------------------------------------------------------*/
+    public Collection<Field> combine(Collection<Field> list, Collection<Field> list2) {
+        Collection<Field> result = new HashSet<>();
+        for (Field f : list) {
+            result.add(f);
+        }
+        for (Field f : list2) {
+            result.add(f);
+        }
+        return result;
+    }
+    //-----------------------------------------------------------------------------
+
+}

@@ -1,0 +1,110 @@
+package de.uniwue.jpp.mineswueper;
+
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+public class RevealFieldsResult {
+    Field field;
+    /*-----------------------------------------------------------------------------------------------------*/
+    //Defining the enum in the class
+    public enum RevealFieldState {FIELD_NOT_REVEALED, FIELDS_REVEALED, FOUND_MINE};
+    /*-----------------------------------------------------------------------------------------------------*/
+    //Wenn das Klick nix macht
+    public RevealFieldsResult(){
+
+    }
+    /*-----------------------------------------------------------------------------------------------------*/
+    //Erstellt eine neue RevealFieldsResult-Instanz mit einer Menge aufgedeckter Felder.
+    public RevealFieldsResult(Collection<Field> fields){
+
+        }
+    /*-----------------------------------------------------------------------------------------------------*/
+    public Collection<Field> getRevealedFields(){
+        Collection<Field> result = new Collection<Field>() {
+            @Override
+            public int size() {
+                return 0;
+            }
+
+            @Override
+            public boolean isEmpty() {
+                return false;
+            }
+
+            @Override
+            public boolean contains(Object o) {
+                return false;
+            }
+
+            @Override
+            public Iterator<Field> iterator() {
+                return null;
+            }
+
+            @Override
+            public Object[] toArray() {
+                return new Object[0];
+            }
+
+            @Override
+            public <T> T[] toArray(T[] a) {
+                return null;
+            }
+
+            @Override
+            public boolean add(Field field) {
+                return false;
+            }
+
+            @Override
+            public boolean remove(Object o) {
+                return false;
+            }
+
+            @Override
+            public boolean containsAll(Collection<?> c) {
+                return false;
+            }
+
+            @Override
+            public boolean addAll(Collection<? extends Field> c) {
+                return false;
+            }
+
+            @Override
+            public boolean removeAll(Collection<?> c) {
+                return false;
+            }
+
+            @Override
+            public boolean retainAll(Collection<?> c) {
+                return false;
+            }
+
+            @Override
+            public void clear() {
+
+            }
+
+            @Override
+            public boolean equals(Object o) {
+                return false;
+            }
+
+            @Override
+            public int hashCode() {
+                return 0;
+            }
+        };
+        return result;
+    }
+    /*-----------------------------------------------------------------------------------------------------*/
+    public RevealFieldState getState(){
+        return RevealFieldState.FIELD_NOT_REVEALED;
+    }
+
+
+}
+

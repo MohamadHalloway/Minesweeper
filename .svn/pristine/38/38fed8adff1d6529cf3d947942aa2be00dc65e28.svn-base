@@ -1,0 +1,77 @@
+package de.uniwue.jpp.mineswueper;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Objects;
+
+import static de.uniwue.jpp.mineswueper.RevealFieldsResult.RevealFieldState.FIELD_NOT_REVEALED;
+
+public class Field {
+
+    private boolean Mine;
+    private boolean Flagge;
+    private boolean Opened;
+    private int minesNachbern;
+    private Coordinate xy;
+    private RevealFieldsResult.RevealFieldState status;
+    private Collection<Field> Nachbern;
+
+    /*-----------------------------------------------------------------------------------------------------*/
+    public Field(Coordinate coord){
+        this.xy = coord;
+        this.Mine = false;
+        this.Flagge = false;
+        this.Opened = false;
+    }
+    /*-----------------------------------------------------------------------------------------------------*/
+    //Getters und Setters
+    public Coordinate getCoordinate(){ //Achtung für Später ob die Ausgabe String oder Coordinate sein soll??
+        return this.xy;
+    }
+    public boolean hasFlag() {return Flagge;}
+    public void setHasFlag(boolean flag){
+        this.Flagge = flag;
+    }
+    public boolean hasMine() {
+        return Mine;
+    }
+    public void setHasMine(boolean Mine){
+        this.Mine = Mine;
+    }
+    public boolean isOpened(){
+        return Opened;
+    }
+    public void setOpened(boolean opened){
+        this.Opened = opened;
+    }
+    public int getNeighbourMineCount(){
+        return minesNachbern;
+    }
+    public void setNeighbourMineCount(int count) {
+        if (count > 0) {
+            this.minesNachbern = count;
+        }
+        else throw new IllegalArgumentException();
+    }
+    public RevealFieldsResult.RevealFieldState getStatus() { return status; }
+    public void setStatus(RevealFieldsResult.RevealFieldState status) { this.status = status; }
+    public Collection<Field> getNachbern(){ return Nachbern; }
+    public void setNachbern(Collection<Field> nachbern){this.Nachbern = nachbern;}
+    /*-----------------------------------------------------------------------------------------------------*/
+    //Ovveridings methods
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Field field = (Field) o;
+        return Objects.equals(xy, field.xy);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(xy);
+    }
+    /*-----------------------------------------------------------------------------------------------------*/
+
+}

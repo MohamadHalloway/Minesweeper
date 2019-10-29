@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="18d45bc8-87f1-4345-9b01-99a041a459c3" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>throw</find>
+      <find>thro</find>
+      <find>alleNa</find>
+      <find>revea</find>
+      <find>allenac</find>
+      <find>AlleNachbern</find>
+      <find>find</find>
+      <find>getmin</find>
+      <find>getrem</find>
+      <find>hasw</find>
+      <find>countMines</find>
+      <find>remove</find>
+      <find>remov</find>
+      <find>array</find>
+      <find>new Arra</find>
+      <find>!f.isOpe</find>
+      <find>eq</find>
+      <find>getnach</find>
+      <find>syste</find>
+      <find>findFiel</find>
+    </findStrings>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="310" />
+    <option name="y" value="15" />
+    <option name="width" value="1615" />
+    <option name="height" value="880" />
+  </component>
+  <component name="ProjectId" id="1Q4GWfmPXh9zGjWoJMlL1JLGWBl" />
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/s353177/IdeaProjects/Mineswueper/src/de/uniwue/jpp/mineswueper/RevealFieldsResult.java" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553638603259" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../InfinityLoop" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Game">
+    <configuration name="Game (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="de.uniwue.jpp.mineswueper.view.Game" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.uniwue.jpp.mineswueper.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="de.uniwue.jpp.mineswueper.view.Game" />
+      <module name="Mineswueper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.uniwue.jpp.mineswueper.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="de.uniwue.jpp.mineswueper.MainTest" />
+      <module name="Mineswueper" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.uniwue.jpp.mineswueper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MainTest" />
+      <item itemvalue="Application.Game" />
+      <item itemvalue="Application.Game (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Game" />
+        <item itemvalue="Application.MainTest" />
+        <item itemvalue="Application.Game (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\s353177\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\Users\s353177\IdeaProjects\Mineswueper" />
+          <option name="myCopyRoot" value="C:\Users\s353177\IdeaProjects\Mineswueper" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\Users\s353177\IdeaProjects\Mineswueper" />
+          <option name="myCopyRoot" value="C:\Users\s353177\IdeaProjects\Mineswueper" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="18d45bc8-87f1-4345-9b01-99a041a459c3" name="Default" comment="" />
+      <created>1532686297655</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1532686297655</updated>
+      <workItem from="1532686298907" duration="140000" />
+      <workItem from="1532686439883" duration="628000" />
+      <workItem from="1532687068993" duration="492000" />
+      <workItem from="1532687861509" duration="825000" />
+      <workItem from="1532699328532" duration="24870000" />
+      <workItem from="1532806074433" duration="1210000" />
+      <workItem from="1532847542555" duration="7235000" />
+      <workItem from="1532856232405" duration="15368000" />
+      <workItem from="1532886528008" duration="58182000" />
+      <workItem from="1533113563278" duration="811000" />
+      <workItem from="1533128245791" duration="630000" />
+      <workItem from="1533131504267" duration="147000" />
+      <workItem from="1533135645612" duration="576000" />
+      <workItem from="1533206762483" duration="185000" />
+      <workItem from="1533212204217" duration="737000" />
+      <workItem from="1533387856011" duration="376000" />
+      <workItem from="1533492049019" duration="177000" />
+      <workItem from="1533636309652" duration="101000" />
+      <workItem from="1533661612877" duration="60000" />
+      <workItem from="1533987807708" duration="608000" />
+      <workItem from="1534163485898" duration="606000" />
+      <workItem from="1534623332195" duration="251000" />
+      <workItem from="1534789292082" duration="186000" />
+      <workItem from="1535624709115" duration="198000" />
+      <workItem from="1535635662508" duration="181000" />
+      <workItem from="1548262212761" duration="210000" />
+      <workItem from="1550668549161" duration="170000" />
+      <workItem from="1550673709764" duration="28000" />
+      <workItem from="1550680224677" duration="32000" />
+      <workItem from="1553630392878" duration="724000" />
+      <workItem from="1567022490059" duration="351000" />
+    </task>
+    <task id="LOCAL-00009">
+      <created>1532938542751</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1532938542751</updated>
+    </task>
+    <task id="LOCAL-00010">
+      <created>1532944030173</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1532944030173</updated>
+    </task>
+    <task id="LOCAL-00011">
+      <created>1532944271341</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1532944271341</updated>
+    </task>
+    <task id="LOCAL-00012">
+      <created>1532944339896</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1532944339896</updated>
+    </task>
+    <task id="LOCAL-00013">
+      <created>1532944388774</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1532944388774</updated>
+    </task>
+    <task id="LOCAL-00014">
+      <created>1532944430769</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1532944430769</updated>
+    </task>
+    <task id="LOCAL-00015">
+      <created>1532945022729</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1532945022729</updated>
+    </task>
+    <task id="LOCAL-00016">
+      <created>1532945475495</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1532945475495</updated>
+    </task>
+    <task id="LOCAL-00017">
+      <created>1532946558789</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1532946558789</updated>
+    </task>
+    <task id="LOCAL-00018">
+      <created>1532947292909</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1532947292909</updated>
+    </task>
+    <task id="LOCAL-00019">
+      <created>1532947546625</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1532947546625</updated>
+    </task>
+    <task id="LOCAL-00020">
+      <created>1532966586635</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1532966586635</updated>
+    </task>
+    <task id="LOCAL-00021">
+      <created>1532966747635</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1532966747635</updated>
+    </task>
+    <task id="LOCAL-00022">
+      <created>1532967082834</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1532967082834</updated>
+    </task>
+    <task id="LOCAL-00023">
+      <created>1532967354423</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1532967354423</updated>
+    </task>
+    <task id="LOCAL-00024">
+      <created>1532967852792</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1532967852792</updated>
+    </task>
+    <task id="LOCAL-00025">
+      <created>1532981650043</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1532981650043</updated>
+    </task>
+    <task id="LOCAL-00026">
+      <created>1532981842614</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1532981842614</updated>
+    </task>
+    <task id="LOCAL-00027">
+      <created>1532983371645</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1532983371645</updated>
+    </task>
+    <task id="LOCAL-00028">
+      <created>1532984922443</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1532984922443</updated>
+    </task>
+    <task id="LOCAL-00029">
+      <created>1532991881858</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1532991881858</updated>
+    </task>
+    <task id="LOCAL-00030">
+      <created>1532994168376</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1532994168376</updated>
+    </task>
+    <task id="LOCAL-00031">
+      <created>1533026169274</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1533026169274</updated>
+    </task>
+    <task id="LOCAL-00032">
+      <created>1533032444656</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1533032444656</updated>
+    </task>
+    <task id="LOCAL-00033">
+      <created>1533037000498</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1533037000498</updated>
+    </task>
+    <task id="LOCAL-00034">
+      <created>1533037909365</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1533037909365</updated>
+    </task>
+    <task id="LOCAL-00035">
+      <created>1533045289335</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1533045289335</updated>
+    </task>
+    <task id="LOCAL-00036">
+      <created>1533046458111</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1533046458111</updated>
+    </task>
+    <task id="LOCAL-00037">
+      <created>1533048005543</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1533048005543</updated>
+    </task>
+    <task id="LOCAL-00038">
+      <created>1533048689562</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1533048689562</updated>
+    </task>
+    <task id="LOCAL-00039">
+      <created>1533048852089</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1533048852089</updated>
+    </task>
+    <task id="LOCAL-00040">
+      <created>1533050946865</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1533050946865</updated>
+    </task>
+    <task id="LOCAL-00041">
+      <created>1533051542965</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1533051542965</updated>
+    </task>
+    <task id="LOCAL-00042">
+      <created>1533051801288</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1533051801288</updated>
+    </task>
+    <task id="LOCAL-00043">
+      <created>1533052019885</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1533052019885</updated>
+    </task>
+    <task id="LOCAL-00044">
+      <created>1533052697513</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1533052697513</updated>
+    </task>
+    <task id="LOCAL-00045">
+      <created>1533053027270</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1533053027270</updated>
+    </task>
+    <task id="LOCAL-00046">
+      <created>1533053154643</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1533053154643</updated>
+    </task>
+    <task id="LOCAL-00047">
+      <created>1533053561955</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1533053561955</updated>
+    </task>
+    <task id="LOCAL-00048">
+      <created>1533076895632</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1533076895632</updated>
+    </task>
+    <task id="LOCAL-00049">
+      <created>1533079032110</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1533079032110</updated>
+    </task>
+    <task id="LOCAL-00050">
+      <created>1533079547604</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1533079547605</updated>
+    </task>
+    <task id="LOCAL-00051">
+      <created>1533079610078</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1533079610078</updated>
+    </task>
+    <task id="LOCAL-00052">
+      <created>1533079762739</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1533079762739</updated>
+    </task>
+    <task id="LOCAL-00053">
+      <created>1533079887889</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1533079887889</updated>
+    </task>
+    <task id="LOCAL-00054">
+      <created>1533080172299</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1533080172299</updated>
+    </task>
+    <task id="LOCAL-00055">
+      <created>1533080259805</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1533080259805</updated>
+    </task>
+    <task id="LOCAL-00056">
+      <created>1533080435086</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1533080435086</updated>
+    </task>
+    <task id="LOCAL-00057">
+      <created>1533080704216</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1533080704216</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Mineswueper</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
